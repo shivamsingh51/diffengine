@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DiffEngine - JSON Comparator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>DiffEngine</h1>
+        <p>Compare two JSON documents and find the differences.</p>
+    </header>
+
+    <main>
+
+        <section class="editor-container">
+
+            <div class="editor">
+                <h2>Original JSON</h2>
+                <textarea
+                    id="originalJson"
+                    placeholder="Enter original JSON here..."
+                    spellcheck="false"></textarea>
+            </div>
+
+            <div class="editor">
+                <h2>Updated JSON</h2>
+                <textarea
+                    id="updatedJson"
+                    placeholder="Enter updated JSON here..."
+                    spellcheck="false"></textarea>
+            </div>
+
+        </section>
+
+        <div class="action">
+            <button id="compareBtn" onclick="compareJson()">
+                Compare JSON
+            </button>
+        </div>
+
+        <p id="error" class="error"></p>
+
+        <section id="resultSection" hidden>
+
+            <h2>Comparison Results</h2>
+
+            <div class="summary">
+
+                <div class="summary-card added">
+                    <h3>Added</h3>
+                    <p id="addedCount">0</p>
+                </div>
+
+                <div class="summary-card removed">
+                    <h3>Removed</h3>
+                    <p id="removedCount">0</p>
+                </div>
+
+                <div class="summary-card modified">
+                    <h3>Modified</h3>
+                    <p id="modifiedCount">0</p>
+                </div>
+
+            </div>
+
+            <div id="changes"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
