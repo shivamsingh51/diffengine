@@ -16,14 +16,14 @@ async function compareJson() {
 
     try {
 
-        // Convert text into JavaScript JSON objects
+        
         const original = JSON.parse(originalText);
         const updated = JSON.parse(updatedText);
 
         button.disabled = true;
         button.textContent = "Comparing...";
 
-        // Send data to Spring Boot backend
+        
         const response = await fetch("/api/compare", {
 
             method: "POST",
@@ -45,10 +45,9 @@ async function compareJson() {
             );
         }
 
-        // Receive backend response
+
         const result = await response.json();
 
-        // Display comparison results
         displayResults(result);
 
     } catch (error) {
