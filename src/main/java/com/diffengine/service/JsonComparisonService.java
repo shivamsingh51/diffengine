@@ -37,7 +37,7 @@ public class JsonComparisonService {
             String path,
             List<Change> changes) {
 
-        // Compare JSON objects
+        
         if (oldNode.isObject() && newNode.isObject()) {
 
             Set<String> fields = new LinkedHashSet<>();
@@ -81,7 +81,7 @@ public class JsonComparisonService {
             return;
         }
 
-        // Compare JSON arrays by index
+        
         if (oldNode.isArray() && newNode.isArray()) {
 
             int largestSize = Math.max(
@@ -125,7 +125,7 @@ public class JsonComparisonService {
             return;
         }
 
-        // Compare primitive values or different JSON types
+        
         if (!Objects.equals(oldNode, newNode)) {
 
             changes.add(new Change(
